@@ -181,8 +181,9 @@ if(JOptionPane.showConfirmDialog(this,"¿Está seguro de eliminar la Universidad
          
         var data = this.jTextField3.getText();
         try{
-            JOptionPane.showMessageDialog(rootPane, "La Universidad Eliminada con exito");  
+              
         this.universidadControl.eliminar(data);
+        JOptionPane.showMessageDialog(rootPane, "La Universidad Eliminada con exito");
          
         this.ActualizarTabla();
         }catch (Exception e1) {

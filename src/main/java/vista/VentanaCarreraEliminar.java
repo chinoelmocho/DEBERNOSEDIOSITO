@@ -182,9 +182,10 @@ public class VentanaCarreraEliminar extends javax.swing.JInternalFrame {
         
             
             try{
-            JOptionPane.showMessageDialog(rootPane, "La Carrera Eliminada con exito");    
+              
             var codigo = this.jTextField6.getText();
             this.carreraControl.eliminar(codigo);
+            JOptionPane.showMessageDialog(rootPane, "La Carrera Eliminada con exito");  
             this.ActualizarTabla();
          
         this.ActualizarTabla();

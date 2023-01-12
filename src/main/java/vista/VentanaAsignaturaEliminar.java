@@ -191,10 +191,15 @@ public class VentanaAsignaturaEliminar extends javax.swing.JInternalFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         if (JOptionPane.showConfirmDialog(this, "¿Está seguro de eliminar la Asignatura?", "Seleccione una opción...", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE) == 0) {
-            JOptionPane.showMessageDialog(rootPane, "La Asignatura Eliminada con exito");
-            var codigo = this.jTextField2.getText();
-            this.asignaturaControl.eliminar(codigo);
-            this.actualizarTabla();
+            try {
+                
+                var codigo = this.jTextField2.getText();
+                this.asignaturaControl.eliminar(codigo);
+                JOptionPane.showMessageDialog(rootPane, "La Asignatura Eliminada con exito");
+                this.actualizarTabla();
+            } catch (Exception e1) {
+                JOptionPane.showMessageDialog(this, e1.getMessage(), "Error en la Eliminacion", JOptionPane.ERROR_MESSAGE);
+            }
 
         }
         // TODO add your handling code here:

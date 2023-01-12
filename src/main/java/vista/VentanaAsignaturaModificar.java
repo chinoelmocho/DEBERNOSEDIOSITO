@@ -380,11 +380,15 @@ public class VentanaAsignaturaModificar extends javax.swing.JInternalFrame {
         }
         data[8] = this.jTextField1.getText();
         data[9] = this.jTextField2.getText();
-
-        System.out.println(this.asignaturaControl.modificar(data));
+    try {
+        this.asignaturaControl.modificar(data);
         this.actualizarTabla();
-            JOptionPane.showMessageDialog(rootPane, "La Asignatura modificada con exito");
+            JOptionPane.showMessageDialog(rootPane, "La Asignatura modificada con exito");}
+    catch (Exception e1) {
+            JOptionPane.showMessageDialog(this, e1.getMessage(), "Error en la Modificacion", JOptionPane.ERROR_MESSAGE);
         }
+        }
+         
         
         
         // TODO add your handling code here:

@@ -360,9 +360,14 @@ public class VentanaAsignaturaCrear extends javax.swing.JInternalFrame {
             }
             data[8] = this.jTextField1.getText();
 
-            System.out.println(this.asignaturaControl.crear(data));
+                try{
+            this.asignaturaControl.crear(data);
             this.actualizarTabla();
-            JOptionPane.showMessageDialog(rootPane, "La Asignatura creada con exito");
+            JOptionPane.showMessageDialog(rootPane, "La Asignatura creada con exito");}
+                catch(Exception e1){
+                JOptionPane.showMessageDialog(this, e1.getMessage(), "Error en la creación", JOptionPane.ERROR_MESSAGE);
+                
+                }
         }
 
 

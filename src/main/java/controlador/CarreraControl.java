@@ -33,6 +33,9 @@ public class CarreraControl {
         var dia = Integer.valueOf(data[6]).intValue();
         var universidad = this.universidadServiceImpl.UniversidadCodigo(Integer.valueOf(data[7]));
         var codigo = Integer.valueOf(data[8]).intValue();
+        if( universidad == null){
+        throw new NumberFormatException(" No existe universidad "); 
+        }
 
         if (costoCiclo < 0) {
             retorno += " El costo del ciclo no es valido ";
